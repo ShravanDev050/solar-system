@@ -33,7 +33,7 @@ jobs:
       - name: cache dependencies
         uses: actions/cache@v3
         with:
-            path: node_module
+            path: node_modules
             key: ${{runner.os}}-node-modules-${{hashFiles('package-lock.json')}}
 
       - name: Install dependencies
@@ -70,7 +70,7 @@ jobs:
       - name: cache dependencies
         uses: actions/cache@v3
         with:
-            path: node_module
+            path: node_modules
             key: ${{runner.os}}-node-modules-${{hashFiles('package-lock.json')}}
 
       - name: Install dependencies
