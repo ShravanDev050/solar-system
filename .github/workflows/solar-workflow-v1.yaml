@@ -34,7 +34,7 @@ jobs:
         uses: actions/cache@v3
         with:
             path: node_module
-            key: ${{runner.os}}-node-modules-${{hashFiles('package-lock.json')}}
+            key: ${{runner.os}}-node-modules-(${{hashFiles('package-lock.json')}})
 
       - name: Install dependencies
         run: npm install
@@ -71,7 +71,7 @@ jobs:
         uses: actions/cache@v3
         with:
             path: node_module
-            key: ${{runner.os}}-node-modules-${{hashFiles('package-lock.json')}}
+            key: ${{runner.os}}-node-modules-(${{hashFiles('package-lock.json')}})
 
       - name: Install dependencies
         run: npm install
@@ -79,7 +79,7 @@ jobs:
       - name: check code coverage
         continue-on-error: true
         run: npm run coverage
-        
+
 
       - name: uploadt test artifact
         uses: actions/upload-artifact@v4
