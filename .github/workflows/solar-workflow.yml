@@ -39,6 +39,6 @@ jobs:
       - name: uploadt test artifact
         uses: actions/upload-artifact@v4
         with:
-            name: app-test-result
+            name: ${{matrix.operating_system}}app-test-result-${{matrix.nodejs_version}}
             path: test-results.xml
             
