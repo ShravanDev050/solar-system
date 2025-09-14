@@ -186,6 +186,16 @@ jobs:
            kubectl version --short
            echo "..................................................."
            kubectl get nodes
-
-
+    
+    - name: replace tokens
+      uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: '_{_'
+        tokenSuffix: '_}_'
+        files: '["kubernetes/development/*.yaml"]'
+      env:
+         NAMESPACE: ${{Vars.NAMESPACE}}
+         REPLICAS: ${{vars.REPLICAS}}
+         IMAGE: ${{env.DOCKERHUB_USERNAME}}/solar-system:${{github.sha}}
+         INGRESS_IP: actions-cluster-dns-heqqupvc.hcp.eastus.azmk8s.io
     
