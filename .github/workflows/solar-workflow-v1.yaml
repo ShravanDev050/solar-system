@@ -1,4 +1,4 @@
-name: Solar System Workflow v1
+name: Distribution Sire Workflow
 
 on:
   push:
@@ -12,12 +12,60 @@ on:
         required: true
         type: boolean
         default: false
-        
+
       Deploy_Heritage_App:
         description: 'Deploy the Heritage application'
         required: true
         type: boolean
         default: false
+
+      Deploy_GridOS_App:
+        description: 'Deploy GridOS applications'
+        required: true
+        type: boolean
+        default: false
+
+      Run_Heritage_DVTs:
+        description: 'RUN Heritage DVTs'
+        required: true
+        type: boolean
+        default: false
+
+      Run_Heritage_IVTs:
+        description: 'RUN Heritage IVTs'
+        required: true
+        type: boolean
+        default: false
+
+      Run_GridOS_DVTs:
+        description: 'RUN GridOS DVTs'
+        required: true
+        type: boolean
+        default: false
+
+      DO_Vulcan_Tagging:
+        description: 'Do_Vulcan_Tagging'
+        required: true
+        type: boolean
+        default: false
+      
+      Infra_state_on_Success:
+        description: 'Keep or Destroy Infra state on Success'
+        required: true
+        type: choice
+        default: Destroy
+        options:
+          - Keep
+          - Destroy
+      
+      Infra_state_on_failure:
+        description: 'Keep or Destroy Infra state on Success'
+        required: true
+        type: choice
+        default: Destroy
+        options:
+          - Keep
+          - Destroy
 
 env:
     MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
