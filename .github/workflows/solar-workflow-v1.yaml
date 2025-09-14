@@ -18,18 +18,6 @@ on:
         required: true
         type: boolean
         default: false
-      
-      Deploy_RKE2_Cluster:
-        description: 'Deploy the Deploy_RKE2_Cluster'
-        required: true
-        type: boolean
-        default: false
-
-      Deploy_Foundation:
-        description: 'Deploy Foundation components'
-        required: true
-        type: boolean
-        default: false
 
       Deploy_GridOS_App:
         description: 'Deploy GridOS applications'
@@ -51,12 +39,6 @@ on:
 
       Run_GridOS_DVTs:
         description: 'RUN GridOS DVTs'
-        required: true
-        type: boolean
-        default: false
-
-      Run_GridOS_IVTs:
-        description: 'RUN GridOS IVTs'
         required: true
         type: boolean
         default: false
