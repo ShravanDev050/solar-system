@@ -194,10 +194,10 @@ jobs:
         tokenSuffix: '_}_'
         files: '["solar-system/kubernetes/development/*.yaml"]'
       env:
-         NAMESPACE: ${{Vars.NAMESPACE}}
+         NAMESPACE: ${{vars.NAMESPACE}}
          REPLICAS: ${{vars.REPLICAS}}
-         IMAGE: ${{env.DOCKERHUB_USERNAME}}/solar-system:${{github.sha}}
+         IMAGE: ${{vars.DOCKERHUB_USERNAME}}/solar-system:${{github.sha}}
          INGRESS_IP: actions-cluster-dns-heqqupvc.hcp.eastus.azmk8s.io
     - name : check kubernetes manifests
       run: |
-         cat kubernetes/development/*.yaml
+         cat solar-system/kubernetes/development/*.yaml
