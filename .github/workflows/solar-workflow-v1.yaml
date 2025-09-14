@@ -192,7 +192,7 @@ jobs:
       with:
         tokenPrefix: '_{_'
         tokenSuffix: '_}_'
-        files: '["solar-system/kubernetes/development/*.yaml"]'
+        files: '["kubernetes/development/*.yaml"]'
       env:
          NAMESPACE: ${{vars.NAMESPACE}}
          REPLICAS: ${{vars.REPLICAS}}
@@ -200,4 +200,4 @@ jobs:
          INGRESS_IP: actions-cluster-dns-heqqupvc.hcp.eastus.azmk8s.io
     - name : check kubernetes manifests
       run: |
-         cat solar-system/kubernetes/development/*.yaml
+         cat kubernetes/development/*.yaml
