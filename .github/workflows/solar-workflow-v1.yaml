@@ -178,7 +178,7 @@ jobs:
     - name: Set up AKS context
       uses: azure/aks-set-context@v4
       with:
-       resource-group: 'kml_rg_main-22fb29fc00bc491c'
+       resource-group: 'kml_rg_main-3c4c1962b81f43ec'
        cluster-name: 'actions-cluster'    
     
     - name: verify kubectl installation
