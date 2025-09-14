@@ -6,6 +6,18 @@ on:
       - main
       - 'feature/*'
   workflow_dispatch:
+    inputs:
+      Destroy_Before:
+        description: 'Destroy existing resources before deploying'
+        required: true
+        type: boolean
+        default: false
+        
+      Deploy_Heritage_App:
+        description: 'Deploy the Heritage application'
+        required: true
+        type: boolean
+        default: false
 
 env:
     MONGO_URI: 'mongodb+srv://supercluster.d83jj.mongodb.net/superData'
