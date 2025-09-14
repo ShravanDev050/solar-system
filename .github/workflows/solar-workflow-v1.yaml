@@ -70,7 +70,7 @@ jobs:
      MONGO_PASSWORD: non-prod-password 
     strategy:
         matrix:
-          nodejs_version: [18,19,20]
+          nodejs_version: [18]
           operating_system: [ubuntu-latest]
           exclude:
             - nodejs_version: 18
@@ -198,4 +198,6 @@ jobs:
          REPLICAS: ${{vars.REPLICAS}}
          IMAGE: ${{env.DOCKERHUB_USERNAME}}/solar-system:${{github.sha}}
          INGRESS_IP: actions-cluster-dns-heqqupvc.hcp.eastus.azmk8s.io
-    
+    - name : check kubernetes manifests
+      run: |
+         cat kubernetes/development/*.yaml
